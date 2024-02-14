@@ -1,0 +1,30 @@
+section(class="main__section stages" id="stages")
+ div(class="stages__container container")
+  div(class="stages__title-box title-box")
+   h2(class="title-box__title section-title") Этапы преображения Васюков
+   a(class="title-box__link" href="#") Будущие источники обогащения васюкинцев
+  .stages__wrapper
+   div(class="stages__content swiper-container")
+    -var cards = [{type: 1, numberOne: 1, class: 'itemOne', descOne: 'Строительство железнодорожной магистрали Москва-Васюки', numberTwo: 2, descTwo: 'Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов'}, {type: 2, number: 3, class: 'itemTwo', desc: 'Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет'}, {type: 1, numberOne: 4, class: 'itemThree', descOne: 'Строительство дворца для турнира', numberTwo: 5, descTwo: 'Размещение гаражей для гостевого автотранспорта'}, {type: 2, number: 6, class: 'itemFour', desc: 'Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов'}, {type: 2, number: 7, class: 'itemFive', desc: 'Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн'}]
+    ul(class="stages__list list-reset swiper-wrapper")
+     each card in cards
+      if card.type == 1
+       li(class="stages__item item swiper-slide " + card.class)
+        .item__wrapper
+         .item__box
+          p.item__number= card.numberOne
+          p.item__desc= card.descOne
+         .item__box
+          p.item__number= card.numberTwo
+          p.item__desc= card.descTwo
+      else if card.type == 2
+       li(class="stages__item swiper-slide " + card.class)
+        .item__wrapper
+         p.stages__number= card.number
+         p.stages__desc= card.desc
+    .stages__box-img
+     img(class="stages__img", src="images/stages/Mask(1920).png", alt="Изображение 3")
+    .stages__swiper-grup
+     button(class="stages__swiper-button-next swiper-btn-next btn-reset")
+     .stages__swiper-pagination
+     button(class="stages__swiper-button-prev swiper-btn-prev btn-reset")

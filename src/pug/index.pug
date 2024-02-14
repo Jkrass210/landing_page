@@ -1,0 +1,22 @@
+doctype html
+html(lang="ru")
+ head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  title= "The Four Horses Club"
+  link(rel="stylesheet" href="css/normalize.css")
+  link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+  link(rel="stylesheet" href="css/style.css")
+  script(src="https://unpkg.com/swiper/swiper-bundle.min.js", defer)
+  script(src="js/focus-visible.js", defer)
+  script(src="js/main.js", defer)
+ body
+  main.main 
+   include components/hero.pug
+   include components/runLine.pug
+   include components/info.pug
+   include components/stages.pug
+   include components/participants.pug
+   include components/runLine.pug
+  include components/footer.pug
+  

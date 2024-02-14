@@ -1,0 +1,18 @@
+section(class="main__section participants" id="participants")
+ div(class="participants__container container")
+  h2(class="participants__title section-title") Участники турнира
+  div(class="participants__content swiper-container")
+   - var cards = [{pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  pathThree: 'images/participants/participants(375).png', name: 'Хозе-Рауль Капабланка', status: 'Чемпион мира по шахматам', pathInfo: '#', alt: 'Фото Хозе-Рауль Капабланка'}, {pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  name: 'Эммануил Ласкер', status: 'Чемпион мира по шахматам', pathInfo: '#', alt: 'Фото Эммануил Ласкер'}, {pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  name: 'Александр Алехин', status: 'Чемпион мира по шахматам', pathInfo: '#', alt: 'Фото Александр Алехин'}, {pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  name: 'Арон Нимцович', status: 'Чемпион мира по шахматам', pathInfo: '#', alt: 'Фото Арон Нимцович'}, {pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  name: 'Рихард Рети', status: 'Чемпион мира по шахматам', pathInfo: '#', alt: 'Фото Рихард Рети'}, {pathImg: 'images/participants/participants(1920).png', pathThree: 'images/participants/participants(375).png',  name: 'Остап Бендер', status: 'Гроссмейстер', pathInfo: '#', alt: 'Фото Остап Бендер'}]
+   ul(class="participants__list list-reset swiper-wrapper")
+    each card in cards
+     li(class="participants__item swiper-slide")
+      picture(class="participants__picture")
+       source(srcset= card.pathThree, media="(max-width: 380px)")
+       img(class="participants__img" src= card.pathImg alt= card.alt)
+      p.participants__desc-name= card.name
+      p.participants__desc-status= card.status
+      a(class="participants__link" href= card.pathInfo) Подробнее
+   .participants__swiper-grup
+    button(class="participants__swiper-button-next swiper-btn-next btn-reset")
+    .participants__swiper-pagination
+    button(class="participants__swiper-button-prev swiper-btn-prev btn-reset")

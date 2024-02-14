@@ -1,0 +1,218 @@
+.hero {
+ background-image: url("../images/hero/1920.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+
+ &__content {
+  display: flex;
+  padding-top: 26px;
+  padding-bottom: 130px;
+ }
+
+ &__left {
+  max-width: 45%;
+ }
+
+ &__logo {
+  max-width: 245px;
+  margin-bottom: 61px;
+ }
+
+ &__logo-link {
+  position: relative;
+ }
+
+ &__logo-link:focus {
+  outline: none;
+ }
+
+ &__logo-link::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 1px solid $colorBtnBlue;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+ }
+
+ &__logo-link.focus-visible::after {
+  opacity: 1;
+ }
+}
+
+.desc-grup {
+ margin-bottom: 27px;
+ font-family: "Merriweather";
+ font-weight: 400;
+ font-size: 60px;
+ line-height: 110%;
+ color: $colorTitleDark;
+ text-transform: uppercase;
+
+ &__desc-bottom {
+  text-align: center;
+ }
+}
+
+.title-grup {
+ margin-bottom: 40px;
+
+ &__title{
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  text-align: center;
+  color: $colorTitleDark;
+ }
+}
+
+.hidden {
+ display: none;
+}
+
+.link-grup {
+ display: flex;
+ justify-content: space-between;
+ gap: 30px;
+
+ &__link {
+  max-width: 263px;
+  padding: 13px 60px;
+  border-radius: 66px;
+  font-family: "Golos-Text";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+ }
+
+ &__link.link-left {
+  background-color: $colorBtnDark;
+  color: $colorTextWhite;
+ }
+
+ &__link.link-right {
+  border: 2px solid $colorBtnDark;
+  color: $colorBtnDark;
+ }
+
+ &__link.link-left:focus, &__link.link-right:focus {
+  outline: none;
+ }
+
+ &__link.link-left.focus-visible, &__link.link-left:hover, &__link.link-left:active {
+  background-color: $colorBtnYellow;
+  color: $colorBtnDark;
+ }
+
+ &__link.link-right.focus-visible, &__link.link-right:hover, &__link.link-right:active {
+  background-color: $colorBtnDark;
+  color: $colorTextWhite;
+ }
+}
+
+@media (max-width: 1350px) {
+ .hero {
+  &__content {
+   padding-top: calc(18px + (26 - 18) * ((100vw - 375px) / (1366 - 375)));
+  }
+
+  &__left {
+   max-width: 50%;
+  }
+
+  &__logo {
+   max-width: calc(213px + (245 - 213) * ((100vw - 375px) / (1366 - 375)));
+   margin-bottom: calc(40px + (61 - 40) * ((100vw - 375px) / (1366 - 375)));
+  }
+ }
+
+ .desc-grup {
+  margin-bottom: 27px;
+  font-size: calc(36px + (60 - 36) * ((100vw - 375px) / (1366 - 375)));;
+ }
+
+ .link-grup {
+  &__link {
+   padding: 13px 40px;
+  }
+ }
+}
+
+@media (max-width: 1200px) {
+ .hero {
+  &__left {
+   max-width: 60%;
+  }
+ }
+
+ .link-grup {
+  flex-direction: column;
+
+  &__link {
+   max-width: none;
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto;
+  }
+ }
+}
+
+@media (max-width: 970px) {
+ .hero {
+  &__left {
+   max-width: 65%;
+  }
+ }
+
+ .link-grup__link.link-right {
+  border: none;
+  background-color: rgb(248, 248, 248, 0.7);
+ }
+}
+
+@media (max-width: 776px) {
+ .hero {
+  &__left {
+   max-width: 100%;
+  }
+ }
+}
+
+@media (max-width: 550px) {
+ .hero {
+  background-image: url("../images/hero/375.jpg");
+
+  &__content {
+   padding-bottom: 87%;
+  }
+ }
+
+ .title-grup {
+  margin-bottom: 34px;
+
+  &__title {
+   display: none;
+  }
+
+  &__title.hidden {
+   display: block;
+   text-align: left;
+   font-family: "Golos-Text";
+  }
+ }
+
+ .link-grup__link {
+  width: 100%;
+ }
+
+ .link-grup {
+  gap: 15px;
+ }
+}

@@ -1,0 +1,272 @@
+.stages {
+ padding-top: 100px;
+
+ &__content {
+  position: relative;
+  padding-bottom: 100px;
+ }
+
+ &__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+ }
+
+ &__item {
+  position: relative;
+  padding: 20px 20px 20px 72px;
+ }
+
+ &__item.swiper-slide {
+  width: auto;
+  height: auto;
+ }
+
+ &__box-img {
+  position: absolute;
+  right: -63px;
+  bottom: 100px;
+  z-index: 1;
+  max-width: 400px;
+ }
+
+ &__swiper-grup {
+  display: none;
+ }
+}
+
+.title-box {
+ position: relative;
+ margin-bottom: 55px;
+
+ &__title {
+  max-width: 800px;
+ }
+
+ &__link {
+  position: absolute;
+  bottom: 10px;
+  left: 300px;
+  max-width: 250px;
+  font-family: "Golos-Text";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: $colorBtnBlue;
+  transition: color 0.4s ease-in-out;
+ }
+
+ &__link:focus {
+  outline: none;
+ }
+
+ &__link.focus-visible, &__link:hover, &__link:active {
+  color: $colorRunRed;
+ }
+}
+
+.section-title {
+ font-family: "Merriweather";
+ font-weight: 400;
+ font-size: 54px;
+ line-height: 120%;
+ text-transform: uppercase;
+ color: $colorTitleDark;
+}
+
+.itemOne, .itemThree {
+ padding: 0;
+ grid-column: 1 / 3;
+}
+
+.itemThree .item__wrapper > .item__box {
+ padding-right: 68px;
+}
+
+.itemTwo {
+ grid-column: 3 / 4;
+ grid-row: 1 / 3;
+ background-image: url("../images/stages/back(1920)3.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.itemFour {
+ background-image: url("../images/stages/back(1920)6.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.itemFive {
+ padding-right: 320px;
+ grid-column: 2 / 4;
+ background-image: url("../images/stages/back(1920)7.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.item {
+ &__wrapper {
+  display: flex;
+  gap: 20px;
+ }
+ 
+ &__box {
+  position: relative;
+  padding: 20px 20px 20px 72px;
+  width: 50%;
+  background-image: url("../images/stages/back(1920)1245.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+}
+
+.item__number, .stages__number {
+ position: absolute;
+ left: 23px;
+ padding: 5px 11px;
+ border-radius: 50%;
+ font-family: "Golos-Text";
+ font-weight: 600;
+ font-size: 20px;
+ line-height: 120%;
+ color: $colorTitleDark;
+ background-color: $colorTextWhite;
+}
+
+.item__desc, .stages__desc {
+ font-family: "Golos-Text";
+ font-weight: 500;
+ font-size: 20px;
+ line-height: 120%;
+ color: $colorTitleDark;
+}
+
+@media (max-width: 1350px) {
+ .section-title {
+  font-size: calc(36px + (54 - 36) * ((100vw - 375px) / (1366 - 375)));
+ }
+
+ .title-box__link, .item__desc, .stages__desc {
+  font-size: calc(18px + (20 - 18) * ((100vw - 375px) / (1366 - 375)));
+ }
+
+}
+
+@media (max-width: 1200px) {
+ .stages {
+  padding-top: calc(60px + (100 - 60) * ((100vw - 375px) / (1366 - 375)));
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__title-box {
+    margin-bottom: 150px;
+  }
+
+  &__content {
+   position: initial;
+   width: 100%;
+   overflow: hidden;
+   padding-bottom: calc(60px + (100 - 60) * ((100vw - 375px) / (1366 - 375)));
+  }
+
+  &__content .swiper-wrapper {
+   display: flex;
+   column-gap: 0;
+   row-gap: 0;
+ }
+
+ &__list {
+  min-height: 300px;
+ }
+
+  &__item.swiper-slide {
+   padding: 0;
+   width: 100%;
+   background-image: url("../images/stages/back(360).jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+
+  &__box-img {
+   right: 50%;
+   top: 10px;
+   transform: translate(50%, -50%);
+  }
+
+  &__swiper-grup {
+    padding-top: 28px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+ }
+
+ .stages__swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto;
+ }
+
+ .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $colorBtnDark;
+ }
+
+ .item {
+  &__wrapper {
+   height: 76%;
+   position: relative;
+   flex-direction: column;
+   gap: 0;
+  }
+
+  &__box {
+   position: initial;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   background-image: none;
+  }
+
+  &__wrapper {
+   padding: 62px 24px 34px 72px;
+  }
+ }
+
+ .itemThree>.item__box {
+  padding: 0;
+ }
+}
+
+@media (max-width: 1080px) {
+
+}
+
+@media (max-width: 970px) {
+ 
+}
+
+@media (max-width: 776px) {
+  .title-box {
+    &__link {
+      position: initial;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .stages{
+    &__box-img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .stages{
+    &__box-img {
+      top: 24px;
+    }
+  }
+}
